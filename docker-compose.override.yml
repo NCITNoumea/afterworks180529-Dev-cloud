@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  afterworks-devcloud:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+
+  ms.afterworks.happyface:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+
