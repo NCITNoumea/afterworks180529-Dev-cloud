@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using MS.Afterworks.HappyFace.Repositories;
+using MS.Afterworks.HappyFace.Services;
 using WebApplication.Data;
 
 namespace WebApplication
@@ -25,7 +25,8 @@ namespace WebApplication
             string conn = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<HappyfaceDbContext>(options => options.UseSqlServer(conn));
 
-            services.AddScoped<ISmileRepository, SmileRepositoryImpl>();
+            services.AddRepositories();
+            services.AddCognitiveServices();
 
             services.AddMvc();
         }

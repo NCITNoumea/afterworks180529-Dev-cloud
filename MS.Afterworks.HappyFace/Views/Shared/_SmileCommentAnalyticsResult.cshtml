@@ -1,0 +1,9 @@
+﻿@model MS.Afterworks.HappyFace.Models.TextAnalyticsResult
+@if (Model != null)
+{
+    <div class="row text-center">
+        <div>Language detected : <b>@Model.Language</b></div>
+        <div>Key phrases : <b>@String.Join('-', Model.KeyPhrases)</b></div>
+        <div>Sentiment (Bad 0<-->1 GOOD) : <b>@Model.ScoreSentiment</b></div>
+    </div>
+}

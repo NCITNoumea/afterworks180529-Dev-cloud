@@ -7,6 +7,7 @@ using WebApplication.Models;
 using WebApplication.Data;
 using app.Models;
 using MS.Afterworks.HappyFace.Repositories;
+using MS.Afterworks.HappyFace.Services;
 
 namespace WebApplication.Controllers
 {
@@ -14,9 +15,12 @@ namespace WebApplication.Controllers
     {
         private readonly ISmileRepository _repository;
 
-        public HomeController(ISmileRepository repository)
+        private readonly ITextAnalyticsService _textAnalyzeService;
+
+        public HomeController(ISmileRepository repository, ITextAnalyticsService textAnalyzeService)
         {
             _repository = repository;
+            _textAnalyzeService = textAnalyzeService;
         }
 
         public async Task<IActionResult> Index()
@@ -32,19 +36,24 @@ namespace WebApplication.Controllers
         public async Task<IActionResult> Smile(SmileCountViewModel model)
         {
             model.Smile.IsHappy = true;
-            model.Smile.IpAddress = this.Request.HttpContext.Connection.RemoteIpAddress.ToString();
-            if (await _repository.AddSmileAsync(model.Smile))
-                return View();
-            else
-                return View("Error");
+            return await ProcessSmileResult(model);
         }
 
         public async Task<IActionResult> UnhappySmile(SmileCountViewModel model)
         {
             model.Smile.IsHappy = false;
-            model.Smile.IpAddress = this.Request.HttpContext.Connection.RemoteIpAddress.ToString();
+            return await ProcessSmileResult(model);
+        }
+
+        private async Task<IActionResult> ProcessSmileResult(SmileCountViewModel model)
+        {
+            model.Smile.IpAddress = Request.HttpContext.Connection.RemoteIpAddress.ToString();
             if (await _repository.AddSmileAsync(model.Smile))
-                return View();
+            {
+                // COGNITIVE SERVICES : Analyse du texte
+                var commentAnalyzeresult = await _textAnalyzeService.AnalyzeTextAsync(model.Smile.Why);
+                return View(commentAnalyzeresult);
+            }
             else
                 return View("Error");
         }

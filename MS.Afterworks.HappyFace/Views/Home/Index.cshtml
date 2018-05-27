@@ -10,10 +10,12 @@
             <button type="submit" class="fa fa-frown-o hf-bigsmiley btn btn-danger" formaction="Home/UnhappySmile" />
         </div>
     </div>
-    <div class="row">
-        <input asp-for="Smile.Why"/>
+    <div class="row" style="margin-top: 20px">
+        <div class="text-center">
+            <strong>A little comment about your experience:</strong> <input class="text-info" asp-for="Smile.Why" />
+        </div>
     </div>
-    <div class="row" style="text-align: center; margin-top: 20px">
+    <div class="row text-center" style="margin-top: 20px">
         <p>You are <b>@Model.SmileUpCount</b> happy people :) and <b>@Model.SmileDownCount</b> people that will become happy soon !</p>
     </div>
 </form>
