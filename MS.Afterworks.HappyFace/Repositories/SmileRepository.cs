@@ -34,7 +34,7 @@ namespace MS.Afterworks.HappyFace.Repositories
         {
             try
             {
-                return _context.Smiles.Where(s => !s.IsHappy).Count();
+                return await Task.FromResult<int>(_context.Smiles.Where(s => !s.IsHappy).Count());
             }
             catch
             {
@@ -46,7 +46,7 @@ namespace MS.Afterworks.HappyFace.Repositories
         {
             try
             {
-                return _context.Smiles.Where(s => s.IsHappy).Count();
+                return await Task.FromResult<int>(_context.Smiles.Where(s => s.IsHappy).Count());
             }
             catch
             {
