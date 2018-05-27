@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Properties\PublishProfiles\happyfacedemo - Web Deploy.pubxml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.8" />
     <PackageReference Include="Microsoft.Azure.CognitiveServices.Language" Version="1.0.1-preview" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" />
@@ -14,6 +18,15 @@
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\MS.Afterworks.HappyFace.Infrastructure\MS.Afterworks.HappyFace.Infrastructure.csproj" />
+    <ProjectReference Include="..\MS.Afterworks.HappyFace.Core\MS.Afterworks.HappyFace.Core.csproj" />
   </ItemGroup>
 
 </Project>
