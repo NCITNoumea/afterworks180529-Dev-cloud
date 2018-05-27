@@ -6,64 +6,47 @@ using Microsoft.AspNetCore.Mvc;
 using WebApplication.Models;
 using WebApplication.Data;
 using app.Models;
+using MS.Afterworks.HappyFace.Repositories;
 
 namespace WebApplication.Controllers
 {
     public class HomeController : Controller
     {
-        private HappyfaceDbContext _dbContext;
+        private readonly ISmileRepository _repository;
 
-        public HomeController(HappyfaceDbContext context)
+        public HomeController(ISmileRepository repository)
         {
-            _dbContext = context;
+            _repository = repository;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            SmileCountViewModel model = new SmileCountViewModel();
-            model.SmileUpCount = _dbContext.Smiles.Where(s => s.IsHappy).Count();
-            model.SmileDownCount = _dbContext.Smiles.Where(s => !s.IsHappy).Count();
+            SmileCountViewModel model = new SmileCountViewModel()
+            {
+                SmileUpCount = await _repository.CountSmileUp(),
+                SmileDownCount = await _repository.CountSmileDown()
+            };
             return View(model);
         }
 
-        public IActionResult About()
+        public async Task<IActionResult> Smile(SmileCountViewModel model)
         {
-            return View();
+            model.Smile.IsHappy = true;
+            model.Smile.IpAddress = this.Request.HttpContext.Connection.RemoteIpAddress.ToString();
+            if (await _repository.AddSmileAsync(model.Smile))
+                return View();
+            else
+                return View("Error");
         }
 
-        public IActionResult Smile()
+        public async Task<IActionResult> UnhappySmile(SmileCountViewModel model)
         {
-            try
-            {
-                var smile = new Smile { IsHappy = true, Why = "",
-                    IpAddress = this.Request.HttpContext.Connection.RemoteIpAddress.ToString()
-                };
-                _dbContext.Smiles.Add(smile);
-                _dbContext.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                return View("Error", ex);
-            }
-
-            return View();
-        }
-
-        public IActionResult UnhappySmile()
-        {
-            try
-            {
-                var smile = new Smile { IsHappy = false, Why = "",
-                    IpAddress = this.Request.HttpContext.Connection.RemoteIpAddress.ToString() };
-                _dbContext.Smiles.Add(smile);
-                _dbContext.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                return View("Error", ex);
-            }
-
-            return View();
+            model.Smile.IsHappy = false;
+            model.Smile.IpAddress = this.Request.HttpContext.Connection.RemoteIpAddress.ToString();
+            if (await _repository.AddSmileAsync(model.Smile))
+                return View();
+            else
+                return View("Error");
         }
 
         public IActionResult Error()
