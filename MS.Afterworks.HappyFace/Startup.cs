@@ -23,7 +23,8 @@ namespace WebApplication
         {
             // Add framework services.
             string conn = Configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContext<HappyfaceDbContext>(options => options.UseSqlServer(conn));
+            services.AddDbContext<HappyfaceDbContext>(options => 
+                options.UseSqlServer(conn, x => x.MigrationsAssembly("MS.Afterworks.HappyFace.Infrastructure")));
 
             services.AddRepositories();
             services.AddCognitiveServices();
