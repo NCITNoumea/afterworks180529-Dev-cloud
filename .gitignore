@@ -6,3 +6,5 @@
 /obj/
 /MS.Afterworks.HappyFace/obj/
 /MS.Afterworks.HappyFace/obj/
+/MS.Afterworks.HappyFace.Infrastructure/bin/Release/netcoreapp2.0
+/MS.Afterworks.HappyFace.Infrastructure/obj
