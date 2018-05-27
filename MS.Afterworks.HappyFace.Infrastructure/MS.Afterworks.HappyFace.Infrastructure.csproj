@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\afterworks180529-Dev-cloud\MS.Afterworks.HappyFace.Core\MS.Afterworks.HappyFace.Core.csproj" />
+    <ProjectReference Include="..\MS.Afterworks.HappyFace.Core\MS.Afterworks.HappyFace.Core.csproj" />
   </ItemGroup>
 
 </Project>

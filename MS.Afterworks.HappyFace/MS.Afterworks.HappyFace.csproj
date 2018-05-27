@@ -25,8 +25,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\MS.Afterworks.HappyFace.Infrastructure\MS.Afterworks.HappyFace.Infrastructure.csproj" />
     <ProjectReference Include="..\MS.Afterworks.HappyFace.Core\MS.Afterworks.HappyFace.Core.csproj" />
+    <ProjectReference Include="..\MS.Afterworks.HappyFace.Infrastructure\MS.Afterworks.HappyFace.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

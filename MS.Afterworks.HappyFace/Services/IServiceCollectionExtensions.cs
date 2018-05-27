@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using MS.Afterworks.HappyFace.Repositories;
+using MS.Afterworks.HappyFace.Core.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;

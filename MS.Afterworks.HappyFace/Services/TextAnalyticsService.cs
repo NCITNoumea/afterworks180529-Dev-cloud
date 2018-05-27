@@ -1,12 +1,12 @@
-﻿using Microsoft.Azure.CognitiveServices.Language.TextAnalytics;
-using Microsoft.Azure.CognitiveServices.Language.TextAnalytics.Models;
-using Microsoft.Extensions.Logging;
-using MS.Afterworks.HappyFace.Models;
-using MS.Afterworks.HappyFace.Services.Cognitive;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Azure.CognitiveServices.Language.TextAnalytics;
+using Microsoft.Azure.CognitiveServices.Language.TextAnalytics.Models;
+using Microsoft.Extensions.Logging;
+using MS.Afterworks.HappyFace.Services.Cognitive;
+using MS.Afterworks.HappyFace.Core.Models;
 
 namespace MS.Afterworks.HappyFace.Services
 {
