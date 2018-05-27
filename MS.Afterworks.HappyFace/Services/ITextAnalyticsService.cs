@@ -1,8 +1,8 @@
-﻿using MS.Afterworks.HappyFace.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MS.Afterworks.HappyFace.Core.Models;
 
 namespace MS.Afterworks.HappyFace.Services
 {
