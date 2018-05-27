@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using WebApplication.Models;
 using WebApplication.Data;
 using app.Models;
-using MS.Afterworks.HappyFace.Repositories;
 using MS.Afterworks.HappyFace.Services;
+using MS.Afterworks.HappyFace.Core.Infrastructure.Repositories;
 
 namespace WebApplication.Controllers
 {

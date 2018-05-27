@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebApplication.Models;
+using MS.Afterworks.HappyFace.Core.Models;
 
 namespace app.Models
 {
