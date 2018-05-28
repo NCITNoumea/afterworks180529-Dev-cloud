@@ -9,4 +9,4 @@ namespace WebApplication.Data
 
         public DbSet<Smile> Smiles { get; set; }
     }
-}
+}   
