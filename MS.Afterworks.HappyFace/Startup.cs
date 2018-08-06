@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 using MS.Afterworks.HappyFace.Infrastructure.Data;
 using MS.Afterworks.HappyFace.Services;
 
-namespace WebApplication
+namespace MS.Afterworks.HappyFace
 {
     public class Startup
     {
