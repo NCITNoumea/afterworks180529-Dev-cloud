@@ -31,7 +31,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-controller="Home" asp-action="Index" class="fa fa-home" style="font-size: 1.5em;"></a></li>
+                    @*<li><a asp-controller="Home" asp-action="Index" class="fa fa-home" style="font-size: 1.5em;"></a></li>*@
                 </ul>
             </div>
         </div>
@@ -40,7 +40,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p style="text-align: center">&copy; 2018 - Afterworks Demo "Happy Face" <i class="fa fa-heart"></i> Dev</p>
+            <p style="text-align: center">&copy; @DateTime.Now.Year - MS Afterworks Demo "Happy Face" <i class="fa fa-heart"></i> Dev</p>
         </footer>
     </div>
 
