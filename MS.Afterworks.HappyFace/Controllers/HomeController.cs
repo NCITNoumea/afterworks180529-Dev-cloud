@@ -1,14 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using WebApplication.Data;
-using app.Models;
+using MS.Afterworks.HappyFace.Infrastructure.Repositories;
 using MS.Afterworks.HappyFace.Services;
-using MS.Afterworks.HappyFace.Core.Infrastructure.Repositories;
+using MS.Afterworks.HappyFace.ViewModels;
 
-namespace WebApplication.Controllers
+namespace MS.Afterworks.HappyFace.Controllers
 {
     public class HomeController : Controller
     {

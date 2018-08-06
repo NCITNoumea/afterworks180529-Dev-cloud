@@ -1,9 +1,9 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
-using WebApplication.Data;
 using MS.Afterworks.HappyFace.Core.Models;
+using MS.Afterworks.HappyFace.Infrastructure.Data;
 
-namespace MS.Afterworks.HappyFace.Core.Infrastructure.Repositories
+namespace MS.Afterworks.HappyFace.Infrastructure.Repositories
 {
     public class SmileRepository : ISmileRepository
     {
@@ -32,7 +32,7 @@ namespace MS.Afterworks.HappyFace.Core.Infrastructure.Repositories
         {
             try
             {
-                return await Task.FromResult<int>(_context.Smiles.Where(s => !s.IsHappy).Count());
+                return await Task.FromResult(_context.Smiles.Count(s => !s.IsHappy));
             }
             catch
             {
@@ -44,7 +44,7 @@ namespace MS.Afterworks.HappyFace.Core.Infrastructure.Repositories
         {
             try
             {
-                return await Task.FromResult<int>(_context.Smiles.Where(s => s.IsHappy).Count());
+                return await Task.FromResult(_context.Smiles.Count(s => s.IsHappy));
             }
             catch
             {

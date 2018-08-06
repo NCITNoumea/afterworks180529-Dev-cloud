@@ -4,8 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using MS.Afterworks.HappyFace.Infrastructure.Data;
 using MS.Afterworks.HappyFace.Services;
-using WebApplication.Data;
 
 namespace WebApplication
 {

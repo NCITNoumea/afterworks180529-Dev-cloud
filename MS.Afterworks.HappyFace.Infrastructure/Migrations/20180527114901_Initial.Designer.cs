@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
 using System;
-using WebApplication.Data;
+using MS.Afterworks.HappyFace.Infrastructure.Data;
 
 namespace MS.Afterworks.HappyFace.Infrastructure.Migrations
 {

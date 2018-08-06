@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using MS.Afterworks.HappyFace.Core.Models;
+﻿using MS.Afterworks.HappyFace.Core.Models;
 
-namespace app.Models
+namespace MS.Afterworks.HappyFace.ViewModels
 {
     public class SmileCountViewModel
     {
