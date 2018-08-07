@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace MS.Afterworks.HappyFace
+namespace MS.Afterworks.HappyFace.Web
 {
     public class Program
     {

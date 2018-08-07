@@ -5,9 +5,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using MS.Afterworks.HappyFace.Infrastructure.Data;
-using MS.Afterworks.HappyFace.Services;
+using MS.Afterworks.HappyFace.Web.Services;
 
-namespace MS.Afterworks.HappyFace
+namespace MS.Afterworks.HappyFace.Web
 {
     public class Startup
     {

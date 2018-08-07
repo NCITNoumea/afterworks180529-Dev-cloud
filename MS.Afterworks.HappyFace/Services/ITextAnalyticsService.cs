@@ -1,7 +1,7 @@
-﻿using System.Threading.Tasks;
+using System.Threading.Tasks;
 using MS.Afterworks.HappyFace.Core.Models;
 
-namespace MS.Afterworks.HappyFace.Services
+namespace MS.Afterworks.HappyFace.Web.Services
 {
     public interface ITextAnalyticsService
     {

@@ -1,6 +1,6 @@
-﻿using MS.Afterworks.HappyFace.Core.Models;
+using MS.Afterworks.HappyFace.Core.Models;
 
-namespace MS.Afterworks.HappyFace.ViewModels
+namespace MS.Afterworks.HappyFace.Web.ViewModels
 {
     public class SmileCountViewModel
     {

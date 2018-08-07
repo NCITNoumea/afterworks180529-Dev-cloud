@@ -1,12 +1,10 @@
-﻿using Microsoft.Rest;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Rest;
 
-namespace MS.Afterworks.HappyFace.Services.Cognitive
+namespace MS.Afterworks.HappyFace.Web.Services.Cognitive
 { 
     public class ApiKeyServiceClientCredentials : ServiceClientCredentials
     {

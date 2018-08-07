@@ -1,0 +1,1 @@
+docker build -f .\MS.Afterworks.HappyFace\Dockerfile -t msafterworks.azurecr.io/happyfacedemo .

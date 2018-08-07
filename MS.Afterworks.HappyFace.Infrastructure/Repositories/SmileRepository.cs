@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using System.Threading.Tasks;
 using MS.Afterworks.HappyFace.Core.Models;
 using MS.Afterworks.HappyFace.Infrastructure.Data;
@@ -7,7 +7,7 @@ namespace MS.Afterworks.HappyFace.Infrastructure.Repositories
 {
     public class SmileRepository : ISmileRepository
     {
-        readonly HappyfaceDbContext _context;
+        private readonly HappyfaceDbContext _context;
 
         public SmileRepository(HappyfaceDbContext context)
         {

@@ -1,7 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using MS.Afterworks.HappyFace.Infrastructure.Repositories;
 
-namespace MS.Afterworks.HappyFace.Services
+namespace MS.Afterworks.HappyFace.Web.Services
 {
     public static class ServiceCollectionExtensions
     {

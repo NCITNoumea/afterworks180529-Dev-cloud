@@ -1,14 +1,14 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Azure.CognitiveServices.Language.TextAnalytics;
 using Microsoft.Azure.CognitiveServices.Language.TextAnalytics.Models;
 using Microsoft.Extensions.Logging;
-using MS.Afterworks.HappyFace.Services.Cognitive;
 using MS.Afterworks.HappyFace.Core.Models;
+using MS.Afterworks.HappyFace.Web.Services.Cognitive;
 
-namespace MS.Afterworks.HappyFace.Services
+namespace MS.Afterworks.HappyFace.Web.Services
 {
     public class TextAnalyticsService : ITextAnalyticsService
     {
