@@ -1,4 +1,5 @@
 $ACR_NAME="msafterworks"
 $AKV_NAME="msafterworks"
-$ENV_VARS="`"ConnectionStrings__DefaultConnection`"=`"$(az keyvault secret show --vault-name $AKV_NAME -n ConnectionString --query value -o tsv)`" OcpApimSubscriptionKey=$(az keyvault secret show --vault-name $AKV_NAME -n OcpApimSubscriptionKey --query value -o tsv)"
+$ENV_VARS="ConnectionStrings__DefaultConnection=$(az keyvault secret show --vault-name $AKV_NAME -n ConnectionString --query value -o tsv) OcpApimSubscriptionKey`"=`"$(az keyvault secret show --vault-name $AKV_NAME -n OcpApimSubscriptionKey --query value -o tsv)"
+Write-output $ENV_VARS
 az container create --name happyfacedemo --resource-group "AFTERWORKS" --image "$ACR_NAME.azurecr.io/happyfacedemo:latest" --registry-login-server "$ACR_NAME.azurecr.io" --registry-username $(az keyvault secret show --vault-name $AKV_NAME -n $ACR_NAME-pull-usr --query value -o tsv) --registry-password $(az keyvault secret show --vault-name $AKV_NAME -n $ACR_NAME-pull-pwd --query value -o tsv) --dns-name-label happyfacedemo --restart-policy Always --query ipAddress.fqdn --environment-variables $ENV_VARS

@@ -3,18 +3,24 @@
 This project is not intended to be use in production. This is a demonstration application uses during Julien Chable (https://julien.chable.net) sessions to spread happinness to people :)
 It will evolve overtime.
 
-##Cognitive Services
+#Docker support
+##Build HappyFaceDemo image
+1. Run *docker-build.bat* script tp generate the container image
 
-To add Cognitive Services to the app, please follow these instructions :
+##Run HappyFaceDemo container
+1. Run *docker-run.ps1* script to run a HappyFaceDemo image
 
-1. Add package Microsoft.Azure.CognitiveServices.Language (preliminary version)
-2. Add a class names in your project :
+##Deploy to Azure Container Instance
+1. Run *azure-container-instance-create.ps1* script
 
-3. With the following code :
+###Prerequisites
+Make sure your Azure Vault secrets are setup with values for keys :
+-ConnectionString : connection string to the database
+-OcpApimSubscriptionKey : Azure Cogntive Services subscription key 
+-msafterworks-pull-user : Azure Registry username
+-msafterworks-pull-pwd : Azure Registry password
 
-4. Add the environment variable to your project and replace the value with your Azure Cognitive Services key :
-
-##Ideas
+##Ideas (Future)
 
 - Add SignalR update
 - Add push notification for bad comments to notify commercial support to make the user happy :)

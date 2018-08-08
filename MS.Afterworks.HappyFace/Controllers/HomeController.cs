@@ -20,12 +20,19 @@ namespace MS.Afterworks.HappyFace.Web.Controllers
 
         public async Task<IActionResult> Index()
         {
-            SmileCountViewModel model = new SmileCountViewModel()
+            try
             {
-                SmileUpCount = await _repository.CountSmileUp(),
-                SmileDownCount = await _repository.CountSmileDown()
-            };
-            return View(model);
+                var model = new SmileCountViewModel()
+                {
+                    SmileUpCount = await _repository.CountSmileUp(),
+                    SmileDownCount = await _repository.CountSmileDown()
+                };
+                return View(model);
+            }
+            catch
+            {
+                return View("Error");
+            }
         }
 
         public async Task<IActionResult> Smile(SmileCountViewModel model)
@@ -43,14 +50,11 @@ namespace MS.Afterworks.HappyFace.Web.Controllers
         private async Task<IActionResult> ProcessSmileResult(SmileCountViewModel model)
         {
             model.Smile.IpAddress = Request.HttpContext.Connection.RemoteIpAddress.ToString();
-            if (await _repository.AddSmileAsync(model.Smile))
-            {
-                // COGNITIVE SERVICES : Analyse du texte
-                var commentAnalyzeresult = await _textAnalyzeService.AnalyzeTextAsync(model.Smile.Why);
-                return View(commentAnalyzeresult);
-            }
-            else
+            if (!await _repository.AddSmileAsync(model.Smile))
                 return View("Error");
+
+            var commentAnalyzeresult = await _textAnalyzeService.AnalyzeTextAsync(model.Smile.Why);
+            return View(commentAnalyzeresult);
         }
 
         public IActionResult Error()

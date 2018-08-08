@@ -14,9 +14,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solutions items", "Solution
 		.dockerignore = .dockerignore
 		.editorconfig = .editorconfig
 		.gitignore = .gitignore
+		docker-run.ps1 = docker-run.ps1
+		README.md = README.md
 		azure-container-instance-create.ps1 = azure-container-instance-create.ps1
 		docker-build.bat = docker-build.bat
-		docker-run.bat = docker-run.bat
 	EndProjectSection
 EndProject
 Global
