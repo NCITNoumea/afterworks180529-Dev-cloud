@@ -1,10 +1,10 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MS.Afterworks.HappyFace.Infrastructure.Repositories;
-using MS.Afterworks.HappyFace.Services;
-using MS.Afterworks.HappyFace.ViewModels;
+using MS.Afterworks.HappyFace.Web.Services;
+using MS.Afterworks.HappyFace.Web.ViewModels;
 
-namespace MS.Afterworks.HappyFace.Controllers
+namespace MS.Afterworks.HappyFace.Web.Controllers
 {
     public class HomeController : Controller
     {
