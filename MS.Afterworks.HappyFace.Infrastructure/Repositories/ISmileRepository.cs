@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using MS.Afterworks.HappyFace.Core.Models;
 
-namespace MS.Afterworks.HappyFace.Core.Infrastructure.Repositories
+namespace MS.Afterworks.HappyFace.Infrastructure.Repositories
 {
     public interface ISmileRepository
     {

@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using MS.Afterworks.HappyFace.Core.Models;
 
-namespace WebApplication.Data
+namespace MS.Afterworks.HappyFace.Infrastructure.Data
 {
     public class HappyfaceDbContext : DbContext
     {
@@ -9,4 +9,4 @@ namespace WebApplication.Data
 
         public DbSet<Smile> Smiles { get; set; }
     }
-}
+}   

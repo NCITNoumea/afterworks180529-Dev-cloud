@@ -3,11 +3,22 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MS.Afterworks.HappyFace", "MS.Afterworks.HappyFace\MS.Afterworks.HappyFace.csproj", "{31B0A65F-41CD-43FA-9D3C-BB811540BDAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MS.Afterworks.HappyFace.Web", "MS.Afterworks.HappyFace\MS.Afterworks.HappyFace.Web.csproj", "{31B0A65F-41CD-43FA-9D3C-BB811540BDAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MS.Afterworks.HappyFace.Core", "MS.Afterworks.HappyFace.Core\MS.Afterworks.HappyFace.Core.csproj", "{A33EF523-3D75-4E45-A834-B1FA73D92ED2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MS.Afterworks.HappyFace.Core", "MS.Afterworks.HappyFace.Core\MS.Afterworks.HappyFace.Core.csproj", "{A33EF523-3D75-4E45-A834-B1FA73D92ED2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MS.Afterworks.HappyFace.Infrastructure", "MS.Afterworks.HappyFace.Infrastructure\MS.Afterworks.HappyFace.Infrastructure.csproj", "{CA56B310-7A85-4B5D-82E0-65CC59CF42FA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solutions items", "Solutions items", "{10631F02-5569-4FE1-B901-BAA028C32784}"
+	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		docker-run.ps1 = docker-run.ps1
+		README.md = README.md
+		azure-container-instance-create.ps1 = azure-container-instance-create.ps1
+		docker-build.bat = docker-build.bat
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
